@@ -19,12 +19,13 @@ class Hornedbeast extends React.Component {
 
 
 
-    )
+    );
   }
 }
 
 
 export default Hornedbeast;
+
 
 
 
