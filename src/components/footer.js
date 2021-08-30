@@ -2,11 +2,11 @@
 import React from 'react';
 
 class Footer extends React.Component {
-    render(){
-        return(
+    render() {
+        return (
             <>
-        <footer>&copy; Marwan-Zakia</footer>
-          
+                <footer>&copy; Marwan-Zakia</footer>
+
             </>
         )
     }
