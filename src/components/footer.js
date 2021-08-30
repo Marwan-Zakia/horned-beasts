@@ -8,7 +8,7 @@ class Footer extends React.Component {
                 <footer>&copy; Marwan-Zakia</footer>
 
             </>
-        )
+        );
     }
 }
 
