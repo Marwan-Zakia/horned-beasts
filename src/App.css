@@ -51,3 +51,10 @@ width: 200px;
 
 
 }
+.con{
+ 
+ display: grid;
+ grid-template-columns: 2 repeat(1fr);
+
+
+}
