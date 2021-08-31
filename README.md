@@ -102,3 +102,14 @@ Start time:3:15
 Finish time: 5:15
 
 Actual time needed to complete:2 hours becuase i placed the gird in the wrong place
+
+
+====
+Number and name of feature: displaying a model
+Estimate of time needed to complete: i didnt complete it 
+
+Start time: 3:00
+
+Finish time: 7:30
+
+Actual time needed to complete: i didnt complete it
