@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+
 class Hornedbeast extends React.Component {
 
   constructor(props) {
@@ -16,12 +17,12 @@ incrementNumberOfvotes = () => {
     this.setState({
         numberOfvotes : this.state.numberOfvotes + 1
     });
-}
+};
 
   render() {
     return (<>
 
-<Card style={{ width: '18rem' }}>
+<Card style={{ width: '18rem' }} >
   <Card.Img variant="top" src={this.props.data.image_url} onClick={this.incrementNumberOfvotes}/>
   <Card.Body>
     <Card.Title>{this.props.data.title}</Card.Title>
@@ -37,7 +38,7 @@ incrementNumberOfvotes = () => {
     <Card.Text>
     💖  : {this.state.numberOfvotes}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button variant="primary" onClick ={this.props.changeToshow} >Go somewhere</Button>
   </Card.Body>
 </Card>
 

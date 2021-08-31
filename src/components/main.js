@@ -1,6 +1,5 @@
 import React from 'react';
 import Hornedbeast from './propsformain';
-import data from './assets/data.json';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +9,7 @@ class Main extends React.Component {
         return (<>
        <Container class='con'>
   <Row>
-    { data.map(item=>{
+    { this.props.data.map(item=>{
         return( <Col> <Hornedbeast data={item} key={item.image_url}/></Col>);
        })}
        </Row>
