@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 import React from 'react';
 import Header from './components/header';
@@ -10,44 +11,66 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Import the data.json to here to pass the data to main
 // function handle hide on defult enable,disable model here
 //
- // the model should be diabled on defult => when the botten on the card is pressed   => it shoud apper  =>  and should display information   =>    =>
- //SelectedBeast should render here
- // add new component to view the model and render it in app (here)
- // model .func
+// the model should be diabled on defult => when the botten on the card is pressed   => it shoud apper  =>  and should display information   =>    =>
+//SelectedBeast should render here
+// add new component to view the model and render it in app (here)
+// model .func
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
- this.state={
-allofhorndbeasts:data,
-show : false,
-baestobject : {}
-};};
-handleShow=(title)=>{
-  let beasts=data.find(hrond => {
-if (hrond.title===title){return hrond;}
-
-  });
-  this.setState({
-    show : true,
-      baestobject: beasts
-
-  });
- };
-handleClose=()=>{
-  this.setState({
-    show : false
-  });
+    this.state = {
+      allofhorndbeasts: data,
+      show: false,
+      baestobject: {},
+      numberOfhorns: '',
+      hrondbeasts: {}
+    };
   };
-  render(){
-    return (
-      <div>
-        <Header />
-        <Main data={this.state.allofhorndbeasts} changeToshow={this.handleShow} closeModel={this.handleClose} />
-        <SelectedBeast objectbeasts={this.state.baestobject} show={this.state.show} closeModel={this.handleClose} changeToshow={this.handleShow} />
-        <Footer />
-      </div>);
 
-  }
+  formHandler = event => {
+    event.preventDefault();
+    this.setState({
+      numberOfhorns: event.target.value,
+    });
+
+    let numberofhorns = event.target;
+    let Hbeasts = data.find(hrond => {
+      if (hrond.hrons === numberofhorns) { return hrond; }
+
+    });
+    this.setState({
+
+      hrondbeasts: Hbeasts
+
+    });
+  };
+
+handleShow = (title) => {
+  let beasts = data.find(hrond => {
+    if (hrond.title === title) { return hrond; }
+
+  });
+  this.setState({
+    show: true,
+    baestobject: beasts
+
+  });
+};
+handleClose = () => {
+  this.setState({
+    show: false
+  });
+};
+render(){
+  return (
+    <div>
+      <Header select={this.formHandler} />
+      <Main data={(this.state.allofhorndbeasts)} newdata={this.state.hrondbeasts}changeToshow={this.handleShow} hornslist={this.filterList} closeModel={this.handleClose} select={this.formHandler} />
+      <SelectedBeast objectbeasts={this.state.baestobject} show={this.state.show} closeModel={this.handleClose} changeToshow={this.handleShow} />
+      <Footer />
+    </div>);
+
 }
+      }
 
 export default App;
