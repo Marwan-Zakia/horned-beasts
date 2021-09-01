@@ -7,13 +7,17 @@ import Col from 'react-bootstrap/Col';
 class Main extends React.Component {
     render() {
         return (<>
-       <Container class='con'>
-  <Row>
-    { this.props.data.map(item=>{
-        return( <Col> <Hornedbeast data={item} key={item.image_url} changeToshow={this.props.changeToshow} /></Col>);
-       })}
-       </Row>
-     </Container>
+            <Container class='con'>
+                <Row>
+                    {this.props.data.map(item => {
+                        return (<Col> <Hornedbeast data={item} key={item.image_url} changeToshow={this.props.changeToshow} /></Col>);
+                    })
+
+
+
+                    }
+                </Row>
+            </Container>
 
         </>
 
