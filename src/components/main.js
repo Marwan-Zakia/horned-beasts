@@ -10,7 +10,7 @@ class Main extends React.Component {
        <Container class='con'>
   <Row>
     { this.props.data.map(item=>{
-        return( <Col> <Hornedbeast data={item} key={item.image_url}/></Col>);
+        return( <Col> <Hornedbeast data={item} key={item.image_url} changeToshow={this.props.changeToshow} /></Col>);
        })}
        </Row>
      </Container>
